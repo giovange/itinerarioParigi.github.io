@@ -291,11 +291,6 @@
 
 </div>
 
-<div class="legend">
-  <span><span class="pdot" style="background:#7FB88A"></span>Gratis under 26 UE</span>
-  <span><span class="pdot" style="background:#D08A4F"></span>Sempre a pagamento</span>
-</div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 const HOME = { name:"Appartamento", lat:48.8603534, lng:2.3477552, desc:"7 Rue des Innocents &mdash; base del gruppo per tutto il soggiorno." };
