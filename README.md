@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="it">
 <head>
 <meta charset="UTF-8">
@@ -246,10 +246,27 @@
   ::-webkit-scrollbar-thumb{background:var(--line); border-radius:4px;}
 
   @media (max-width:820px){
-    .main{grid-template-columns:1fr;grid-template-rows:38vh 1fr;}
-    .sidebar{order:2; border-right:none; border-top:1px solid var(--line);}
-    #map{order:1;}
-    .legend{left:14px; right:14px; bottom:14px;}
+    html,body{height:auto; overflow:visible;}
+    .app{height:auto; display:block;}
+    header{padding:18px 18px 12px;}
+    nav.tabs{padding:12px 18px;}
+    .main{display:block;}
+    #map{
+      order:0;
+      height:42vh;
+      min-height:260px;
+      width:100%;
+    }
+    .sidebar{
+      order:1;
+      border-right:none;
+      border-top:1px solid var(--line);
+      overflow-y:visible;
+      max-height:none;
+      height:auto;
+      -webkit-overflow-scrolling:touch;
+    }
+    .legend{left:14px; right:14px; bottom:auto; top:calc(42vh + 6px); transform:translateY(-100%);}
     header .title{font-size:21px;}
   }
 </style>
@@ -464,6 +481,9 @@ function selectDay(id){
 
 document.getElementById('dayCount').textContent = `${DAYS.length} giorni · ${DAYS.reduce((a,d)=>a+d.stops.filter(s=>s.lat).length,0)} tappe`;
 selectDay(1);
+
+window.addEventListener('resize', () => setTimeout(() => map.invalidateSize(), 150));
+setTimeout(() => map.invalidateSize(), 200);
 </script>
 </body>
 </html>
