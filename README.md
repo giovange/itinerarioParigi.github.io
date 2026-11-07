@@ -53,6 +53,8 @@
   .stop h3{margin:0 0 3px;font-size:14.5px;font-weight:600;}
   .stop.clickable h3:hover{color:var(--gold);}
   .stop p{margin:0;font-size:12.8px;line-height:1.5;color:var(--ink-dim);}
+  a.booklink{color:var(--gold);font-weight:600;text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(201,162,39,.4);}
+  a.booklink:hover{border-bottom-color:var(--gold);}
   .badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;}
   .badge{display:inline-flex;align-items:center;gap:5px;font-size:11.3px;line-height:1.3;padding:3px 9px 3px 7px;border-radius:20px;background:var(--panel-2);border:1px solid var(--line);}
   .badge .pdot{width:6px;height:6px;border-radius:50%;flex:0 0 auto;}
@@ -186,6 +188,24 @@ const DAYS = [
   }
 ];
 
+/* Link ufficiali di prenotazione (siti ufficiali dei monumenti/musei) */
+const LINKS = {
+  "Sainte-Chapelle":      "https://www.sainte-chapelle.fr",
+  "Notre-Dame":           "https://www.notredamedeparis.fr",
+  "Museo del Louvre":     "https://ticket.louvre.fr/",
+  "Musée de l'Orangerie": "https://billetterie.musee-orangerie.fr",
+  "Arc de Triomphe":      "https://www.paris-arc-de-triomphe.fr",
+  "Musée d'Orsay":        "https://billetterie.musee-orsay.fr",
+  "Tour Eiffel":          "https://www.toureiffel.paris/fr",
+  "Panthéon":             "https://www.paris-pantheon.fr"
+};
+function linkHtml(s){
+  const url = LINKS[s.name];
+  if(!url) return '';
+  const host = url.replace(/^https?:\/\//,'').replace(/\/.*$/,'').replace(/^www\./,'');
+  return ` <a class="booklink" href="${url}" target="_blank" rel="noopener">Prenota: ${host} &rarr;</a>`;
+}
+
 /* ---------- Mappa ---------- */
 const map = L.map('map', { zoomControl:true }).setView([48.8608, 2.3376], 13);
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -246,7 +266,7 @@ function renderDay(day){
     marker.bindPopup(
       `<div class="popup-time">${s.time}${s.duration ? ' · ' + s.duration : ''}</div>
        <div class="popup-title">${s.name}</div>
-       <div class="popup-desc">${s.desc}</div>${extra}`
+       <div class="popup-desc">${s.desc}${linkHtml(s)}</div>${extra}`
     );
     marker.addTo(markerLayer);
     markerRefs[s.name] = marker;
@@ -287,7 +307,7 @@ function renderSidebar(day){
                <span class="time">${s.time}</span>
                <span class="node" style="background:${s.meal ? 'var(--bg)' : day.color}"></span>
                <h3>${s.name}${s.duration ? ` <span style="color:var(--ink-dim);font-weight:400;font-size:12px;">&middot; ${s.duration}</span>` : ''}</h3>
-               <p>${s.desc}</p>
+               <p>${s.desc}${linkHtml(s)}</p>
                ${badgesHtml(s)}
              </div>`;
   });
