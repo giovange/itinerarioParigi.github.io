@@ -131,10 +131,10 @@ const DAYS = [
     stops:[
       {time:"08:30", name:"Arrivo aeroporto ORY", desc:"Trasferimento verso l'appartamento (Orlybus + RER B, o taxi ~30-35 min).", meal:true},
       {time:"09:30", name:"Check-in appartamento", desc:"Deposito bagagli, sistemazione veloce.", meal:true},
-      {time:"10:30", name:"Sainte-Chapelle", lat:48.855375, lng:2.3449609, desc:"Vetrate gotiche tra le più belle d'Europa. Controllo di sicurezza all'ingresso: arrivate 15-20 min prima dello slot.", duration:"~45-60 min", price:"free", priceLabel:"Gratis under 26 UE · intero 13€", open:"Dom 9:00–17:00 (ultimo ingresso 16:30)", book:"Slot gratuito su monuments-nationaux.fr"},
-      {time:"11:45", name:"Pranzo", desc:"Île Saint-Louis o Quartiere Latino.", meal:true},
-      {time:"13:30", name:"Notre-Dame", lat:48.8529682, lng:2.3499021, desc:"Esterno e interno della cattedrale. Il percorso di visita è a senso unico.", duration:"~45 min", price:"free", priceLabel:"Ingresso gratuito", open:"Dom 8:15–19:30", book:"Prenotazione gratuita consigliata (non obbligatoria) su notredamedeparis.fr", warn:"Messe alle 10:00, 11:30, 17:15 e 18:00: evitate quegli orari"},
-      {time:"14:45", name:"Le Marais / Place des Vosges", lat:48.8556114, lng:2.3655266, desc:"Passeggiata nel quartiere storico: boutique vintage, street art, Place des Vosges. La domenica i negozi del Marais sono aperti.", duration:"~2h"},
+      {time:"11:00", name:"Sainte-Chapelle", lat:48.855375, lng:2.3449609, desc:"Vetrate gotiche tra le più belle d'Europa. Controllo di sicurezza all'ingresso: arrivate 15-20 min prima dello slot.", duration:"~45-60 min", price:"free", priceLabel:"Gratis under 26 UE · intero 13€", open:"Dom 9:00–17:00 (ultimo ingresso 16:30)", book:"Slot gratuito su monuments-nationaux.fr"},
+      {time:"12:50", name:"Pranzo", desc:"Île Saint-Louis o Quartiere Latino.", meal:true},
+      {time:"14:30", name:"Notre-Dame", lat:48.8529682, lng:2.3499021, desc:"Esterno e interno della cattedrale. Il percorso di visita è a senso unico.", duration:"~45 min", price:"free", priceLabel:"Ingresso gratuito", open:"Dom 8:15–19:30", book:"Prenotazione gratuita consigliata (non obbligatoria) su notredamedeparis.fr", warn:"Messe alle 10:00, 11:30, 17:15 e 18:00: evitate quegli orari"},
+      {time:"15:30", name:"Le Marais / Place des Vosges", lat:48.8556114, lng:2.3655266, desc:"Passeggiata nel quartiere storico: boutique vintage, street art, Place des Vosges. La domenica i negozi del Marais sono aperti.", duration:"~2h"},
       {time:"16:45", name:"Pausa merenda/caffè", desc:"Scelta libera nel Marais.", meal:true},
       {time:"19:30", name:"Cena", desc:"Zona Marais o Les Halles.", meal:true},
       {time:"21:00", name:"Bar / locali", desc:"Scelta libera per la serata.", meal:true}
