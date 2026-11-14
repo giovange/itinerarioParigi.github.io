@@ -126,15 +126,15 @@ const HOME = { name:"Appartamento", lat:48.8603534, lng:2.3477552, desc:"7 Rue d
    price: 'free' | 'paid' */
 const DAYS = [
   {
-    id:1, color:"#C08497", label:"Panthéon, Quartiere Latino, Notre-Dame, Marais", date:"Dom 6 dic",
-    note:"<b>Cambio rispetto a prima:</b> la Sainte-Chapelle il 6 non è prenotabile, quindi l'ho scambiata con il <b>Panthéon</b> (era mercoledì 9). Il percorso resta in linea: Panthéon → Quartiere Latino → Notre-Dame → Marais, tutto sulla stessa direttrice. La domenica in Notre-Dame ci sono messe (10:00, 11:30, 17:15, 18:00): lo slot delle 14:30 le evita. Il 6 è la prima domenica del mese: potrebbe esserci più folla del solito nei monumenti, quindi prenotate lo slot del Panthéon.",
+    id:1, color:"#C08497", label:"Panthéon, Quartiere Latino, Île Saint-Louis, Marais", date:"Dom 6 dic",
+    note:"<b>Cambio rispetto a prima:</b> Sainte-Chapelle e interno di Notre-Dame il 6 non sono prenotabili, quindi vanno entrambi a <b>mercoledì 9</b> (sono sull'isola, una accanto all'altra). Qui al loro posto ci sono il <b>Panthéon</b> (era il 9) e, nel pomeriggio, Île Saint-Louis con Notre-Dame vista da fuori. Il percorso resta in linea: Panthéon → Quartiere Latino → Île Saint-Louis → Marais. Il 6 è la prima domenica del mese: potrebbe esserci più folla del solito nei monumenti, quindi prenotate lo slot del Panthéon.",
     stops:[
       {time:"08:30", name:"Arrivo aeroporto ORY", desc:"Trasferimento verso l'appartamento (Orlybus + RER B, o taxi ~30-35 min).", meal:true},
       {time:"09:30", name:"Check-in appartamento", desc:"Deposito bagagli, sistemazione veloce.", meal:true},
       {time:"11:00", name:"Panthéon", lat:48.8462218, lng:2.3464138, desc:"Cripta con Voltaire, Rousseau, Hugo, Marie Curie. Dall'appartamento ~20-25 min con RER B (Châtelet → Luxembourg) e 8-10 min a piedi, oppure ~30-35 min a piedi: uscite verso le 10:20-10:30.", duration:"~1h", price:"free", priceLabel:"Gratis under 26 UE · intero 13€", open:"Dom 10:00–18:00 (ultimo ingresso 17:15)", book:"Prenotazione consigliata su paris-pantheon.fr / monuments-nationaux.fr"},
       {time:"12:00", name:"Quartiere Latino", desc:"Sorbona, Rue Soufflot, Jardin du Luxembourg (esterno), strade intorno a Rue Mouffetard. Shakespeare & Company è vicino a Notre-Dame: la prendete dopo pranzo, sulla strada.", duration:"~45 min"},
       {time:"12:50", name:"Pranzo", desc:"Île Saint-Louis o Quartiere Latino.", meal:true},
-      {time:"14:30", name:"Notre-Dame", lat:48.8529682, lng:2.3499021, desc:"Esterno e interno della cattedrale. Il percorso di visita è a senso unico.", duration:"~45 min", price:"free", priceLabel:"Ingresso gratuito", open:"Dom 8:15–19:30", book:"Prenotazione gratuita consigliata (non obbligatoria) su notredamedeparis.fr", warn:"Messe alle 10:00, 11:30, 17:15 e 18:00: evitate quegli orari"},
+      {time:"14:30", name:"Île Saint-Louis e Notre-Dame (esterno)", lat:48.8529682, lng:2.3499021, desc:"Passeggiata sull'isola, Shakespeare & Company sulla riva sinistra e la facciata di Notre-Dame dal sagrato, senza entrare (l'interno è il 9). Tappa golosa: gelato Berthillon sull'Île Saint-Louis.", duration:"~1h", price:"free", priceLabel:"Gratuito"},
       {time:"15:30", name:"Le Marais / Place des Vosges", lat:48.8556114, lng:2.3655266, desc:"Passeggiata nel quartiere storico: boutique vintage, street art, Place des Vosges. La domenica i negozi del Marais sono aperti.", duration:"~2h"},
       {time:"16:45", name:"Pausa merenda/caffè", desc:"Scelta libera nel Marais.", meal:true},
       {time:"19:30", name:"Cena", desc:"Zona Marais o Les Halles.", meal:true},
@@ -173,12 +173,12 @@ const DAYS = [
     ]
   },
   {
-    id:4, color:"#8C6FA6", label:"Sainte-Chapelle, Madeleine, Lafayette + partenza", date:"Mer 9 dic",
-    note:"<b>Cambio rispetto a prima:</b> qui c'è ora la <b>Sainte-Chapelle</b> al posto del Panthéon (spostato al 6). È a 10-15 min a piedi dall'appartamento e sulla strada verso Madeleine. Mercoledì tutte le tappe sono aperte. La terrazza delle Galeries Lafayette può chiudere con pioggia o vento forte.",
+    id:4, color:"#8C6FA6", label:"Sainte-Chapelle, Notre-Dame, Madeleine, Lafayette + partenza", date:"Mer 9 dic",
+    note:"<b>Cambio rispetto a prima:</b> qui ci sono ora <b>Sainte-Chapelle e Notre-Dame</b> (interno), una accanto all'altra sull'Île de la Cité, a 10-15 min a piedi dall'appartamento. Il Panthéon è passato al 6. Mercoledì tutte le tappe sono aperte. La terrazza delle Galeries Lafayette può chiudere con pioggia o vento forte.",
     stops:[
       {time:"09:30", name:"Colazione", desc:"Scelta libera.", meal:true},
       {time:"10:45", name:"Sainte-Chapelle", lat:48.855375, lng:2.3449609, desc:"Vetrate gotiche tra le più belle d'Europa. Controllo di sicurezza all'ingresso: arrivate 15-20 min prima dello slot.", duration:"~45-60 min", price:"free", priceLabel:"Gratis under 26 UE · intero 13€", open:"Mer 9:00–17:00 (ultimo ingresso 16:30)", book:"Slot gratuito su monuments-nationaux.fr"},
-      {time:"11:45", name:"Passeggiata Île de la Cité", desc:"Pont Neuf, Place Dauphine, Square du Vert-Galant (la punta verde dell'isola) e vista sulla Senna.", duration:"~45 min"},
+      {time:"11:45", name:"Notre-Dame", lat:48.8529682, lng:2.3499021, desc:"Interno della cattedrale, a 5 min a piedi dalla Sainte-Chapelle. Il percorso di visita è a senso unico.", duration:"~45 min", price:"free", priceLabel:"Ingresso gratuito", open:"Mer 7:50–19:00", book:"Prenotazione gratuita consigliata (non obbligatoria) su notredamedeparis.fr: se non trovate slot, c'è anche la coda senza prenotazione", warn:"Controllate sul sito eventuali messe o chiusure parziali"},
       {time:"13:00", name:"Pranzo", desc:"Zona Rue Montorgueil / Les Halles (vicino casa).", meal:true},
       {time:"14:30", name:"Place de la Madeleine", lat:48.8699468, lng:2.3248903, desc:"Chiesa neoclassica e boutique gourmet.", duration:"~45 min", price:"free", priceLabel:"Gratuito"},
       {time:"15:15", name:"Galeries Lafayette", lat:48.8736224, lng:2.3321099, desc:"La celebre cupola Art Nouveau e la terrazza panoramica sul tetto, senza prenotazione.", duration:"1h", price:"free", priceLabel:"Ingresso e terrazza gratuiti", open:"Mer circa 10:00–20:00 · terrazza fino alle 19:30", warn:"Terrazza chiusa con pioggia o vento forte"},
